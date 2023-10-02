@@ -1,15 +1,38 @@
-import Link from "next/link";
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
-const Navbar: React.FC = () => {
-  return(
-    <div className="navbar w-full">
-      <div className="flex justify-end gap-16 p-2 pr-10">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-      </div>
-    </div>
-  )
+export default function Navbar() {
+  const [isDocked,setIsDocked] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if(window.scrollY > 60){
+        setIsDocked(true);
+      }
+      else{
+        setIsDocked(false);
+      }
+    };
+
+    window.addEventListener('scroll',handleScroll);
+
+
+    return () => { 
+      window.removeEventListener('scroll',handleScroll);
+    };
+  }, []);
+
+  return (
+    <>
+      <div className="navCollision"></div>
+        <div className={isDocked ? "navbar2 flex justify-end gap-16 p-2 pr-10" : "navbar flex justify-end gap-16 p-2 pr-10"}>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+        </div>
+    </>
+  );
 }
 
-export default Navbar;
+
+

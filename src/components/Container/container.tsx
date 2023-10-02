@@ -1,4 +1,6 @@
 import { PropsWithChildren } from "react";
+import Navbar from "../Navbar/navbar";
+import Head from "next/head";
 
 export type Container_Properties = PropsWithChildren<{
   title: string,
@@ -6,8 +8,17 @@ export type Container_Properties = PropsWithChildren<{
 
 }>;
 
-export default function Container(properties: Container_Properties){
-  
+export default function Container(){
+  return(
+    <>
+      <Head>
+      </Head>
+        <Navbar/>
+        <div className="container">
+          <p>Test</p>
+        </div>
+    </>
+  )
 }
 
 /*
