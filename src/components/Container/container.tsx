@@ -8,14 +8,21 @@ export type Container_Properties = PropsWithChildren<{
 
 }>;
 
-export default function Container(){
+export type ContainerProperties = PropsWithChildren<{
+  title:string,
+  image?:string,
+  className?:string
+}>;
+
+export default function Container({children,title,image,className}:ContainerProperties){
   return(
     <>
       <Head>
+        <title>{title}</title>
       </Head>
         <Navbar/>
         <div className="container">
-          <p>Test</p>
+          {children}
         </div>
     </>
   )

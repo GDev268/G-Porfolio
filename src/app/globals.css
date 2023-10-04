@@ -8,32 +8,11 @@
   /* Add other font formats and variations if needed */
 }
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  font-family: 'Roboto', sans-serif;
-
-}
-
+  color: rgb(255,255,255);
+  background: rgb(22,22,22);
+} 
+    
 .navCollision{
   width: 100%;
   height: 50px;
@@ -46,8 +25,9 @@ body {
   position: fixed;
   top: 0px;
   z-index: 15;
-  border-bottom: 0;
-  transition: all 0.5s ease-in;
+  border-bottom: 1px solid transparent;
+
+  transition: all 0.25s ease-in;
 }
 
 .navbar2{
@@ -55,10 +35,28 @@ body {
   height: 50px;
   position: fixed;
   top: 0px;
-  z-index: 15;  
+  z-index: 999;  
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgb(255, 255, 255);
-  transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
+/* Add basic styles to the text element */
+.block {
+    background-clip: padding-box;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    padding: 5px 10px;
+    display: inline;
+    transform: scale(1,1);
+}
 
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-left: 50px solid #FFF;
+	border-bottom: 50px solid transparent;
+  translate: 100px 50px;
+}

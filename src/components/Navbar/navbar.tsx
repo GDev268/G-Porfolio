@@ -26,9 +26,17 @@ export default function Navbar() {
   return (
     <>
       <div className="navCollision"></div>
-        <div className={isDocked ? "navbar2 flex justify-end gap-16 p-2 pr-10" : "navbar flex justify-end gap-16 p-2 pr-10"}>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
+        <div className={isDocked ? "navbar2 relative" : "navbar relative"}>
+          <div className={"flex justify-between items-center gap-4 p-2 pr-20 pl-20"}>
+            <div className="flex items-center gap-4">
+              <a className="block" href="/">Home</a>
+              <a className="block" href="/about">About</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <a className="block" href="/">Home</a>
+              <a className="block" href="/about">About</a>
+            </div>
+          </div>
         </div>
     </>
   );
